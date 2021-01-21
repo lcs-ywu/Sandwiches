@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var sandwiches: [Sandwich] = []
+   
     var body: some View {
         NavigationView{
             List {
@@ -18,6 +19,7 @@ struct ContentView: View {
                 HStack {
                     Spacer()
                     Text("\(sandwiches.count) Sandwiches")
+                        .foregroundColor(Color.gray)
                     Spacer()
                 }
                 foregroundColor(.secondary)
