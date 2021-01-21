@@ -23,6 +23,8 @@ struct ContentView: View {
                 foregroundColor(.secondary)
             }
             .navigationTitle("Sandwiches")
+            Text("Select a sandwich")
+                .font(.largeTitle)
         }
     }
 }
