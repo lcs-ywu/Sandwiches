@@ -28,11 +28,16 @@ struct ContentView: View {
             }
             .navigationTitle("Sandwiches")
             .toolbar {
-                #if os(iOS)
-                EditButton()
-                #endif
-                Button("Add", action: makeSandwich)
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    #if os(iOS)
+                    EditButton()
+                    #endif
+                }
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button("Add", action: makeSandwich)
+                }
             }
+           
             Text("Select a sandwich")
                 .font(.largeTitle)
         }
@@ -56,7 +61,14 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(store: testStore)
+        Group {
+            ContentView(store: testStore)
+            ContentView(store: testStore)
+                .environment(\.sizeCategory, .extraExtraExtraLarge)
+            ContentView(store: testStore)
+                .preferredColorScheme(.dark)
+                .environment(\.sizeCategory, .extraExtraExtraLarge)
+        }
     }
 }
 
