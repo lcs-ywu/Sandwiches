@@ -13,7 +13,7 @@ struct SandwichesApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView(store: store)
+            ContentView(store: testStore)
         }
     }
 }

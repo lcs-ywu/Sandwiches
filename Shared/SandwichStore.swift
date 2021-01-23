@@ -8,7 +8,7 @@
 import Foundation
 
 class SandwichStore:ObservableObject {
-    var sandwiches: [Sandwich]
+    @Published var sandwiches: [Sandwich]
 
     init(sandwiches: [Sandwich] = []) {
         self.sandwiches = sandwiches
